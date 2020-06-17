@@ -1,0 +1,27 @@
+{
+    "name": "stylelint-plugin-skeleton",
+    "version": "1.0.0",
+    "description": "Skeleton for making a stylelint plugin.",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/electrovir/stylelint-plugin-skeleton.git"
+    },
+    "keywords": [],
+    "author": "electrovir (github.com/electrovir)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/electrovir/stylelint-plugin-skeleton/issues"
+    },
+    "homepage": "https://github.com/electrovir/stylelint-plugin-skeleton#readme",
+    "devDependencies": {
+        "@types/stylelint": "^9.10.1",
+        "stylelint": "^13.6.0"
+    },
+    "peerDependencies": {
+        "stylelint": "^13.6.0"
+    }
+}
