@@ -34,3 +34,8 @@ const rule: Plugin = (
 };
 
 export const visibilityRule = createRule(ruleName, rule);
+console.log('UNDEFINED THIS');
+console.log('UNDEFINED THIS');
+console.log('UNDEFINED THIS');
+console.log('UNDEFINED THIS');
+console.log(visibilityRule);

@@ -10,9 +10,7 @@ export function createRuleMessage(ruleName: string, message: string): string {
     return utils.ruleMessages(ruleName, {whatever: () => message}).whatever();
 }
 
-export function createRule(ruleName: string, ruleCallback: Plugin): Rule {
-    return {
-        ruleName: `${pluginPrefix}/${ruleName}`,
-        rule: createPlugin(ruleName, ruleCallback),
-    };
+export function createRule(inputRuleName: string, ruleCallback: Plugin): Rule {
+    const ruleName = `${pluginPrefix}/${inputRuleName}`;
+    return createPlugin(ruleName, ruleCallback);
 }

@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
         "alwaysStrict": true,
-        "declaration": true,
         "forceConsistentCasingInFileNames": true,
         "module": "commonjs",
+        "target": "ES2018",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,

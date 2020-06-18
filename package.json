@@ -4,7 +4,7 @@
     "description": "Skeleton for making a stylelint plugin.",
     "main": "dist/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "tsc && jest"
     },
     "repository": {
         "type": "git",
@@ -19,9 +19,13 @@
     "homepage": "https://github.com/electrovir/stylelint-plugin-skeleton#readme",
     "devDependencies": {
         "@types/stylelint": "^9.10.1",
-        "stylelint": "^13.6.0"
+        "jest": "^26.0.1",
+        "jest-preset-stylelint": "^3.0.0",
+        "stylelint": "^13.6.0",
+        "typescript": "^3.9.5"
     },
     "peerDependencies": {
         "stylelint": "^13.6.0"
-    }
+    },
+    "dependencies": {}
 }
