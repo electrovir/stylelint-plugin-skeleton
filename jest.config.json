@@ -1,5 +1,4 @@
 {
-    "preset": "jest-preset-stylelint",
-    "rootDir": "dist",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "rootDir": "dist"
 }

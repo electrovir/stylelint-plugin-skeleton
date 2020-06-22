@@ -1,12 +1,14 @@
 import {Plugin, utils} from 'stylelint';
 import {createRule, createRuleMessage} from '../../rule';
 
-const ruleName = 'no-visibility-allowed';
+const ruleName = 'skeleton/visibility';
 
 const rule: Plugin = (
     primaryOption,
-    secondaryOptions,
-    context: {fix: boolean; newline: string} = {fix: false, newline: '\n'},
+    options,
+    context = {
+        fix: false,
+    },
 ) => {
     return (root, result) => {
         if (!primaryOption) {
@@ -14,28 +16,21 @@ const rule: Plugin = (
         }
 
         root.walkDecls(decl => {
-            if (context.fix) {
-                decl.remove();
-            }
             if (decl.prop === 'visibility') {
-                utils.report({
-                    result,
-                    ruleName,
-                    message: createRuleMessage(
+                if (context.fix) {
+                    decl.remove();
+                } else {
+                    utils.report({
+                        result,
                         ruleName,
-                        'Try not to use visibility: ' + decl.prop + ', ' + decl.value,
-                    ),
-                    node: decl,
-                    word: decl.value,
-                });
+                        message: createRuleMessage(ruleName, 'Try not to use visibility'),
+                        node: decl,
+                        word: decl.value,
+                    });
+                }
             }
         });
     };
 };
 
-export const visibilityRule = createRule(ruleName, rule);
-console.log('UNDEFINED THIS');
-console.log('UNDEFINED THIS');
-console.log('UNDEFINED THIS');
-console.log('UNDEFINED THIS');
-console.log(visibilityRule);
+export const orderRule = createRule(ruleName, rule);

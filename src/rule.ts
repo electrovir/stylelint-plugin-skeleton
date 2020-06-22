@@ -1,5 +1,4 @@
-import {Plugin, createPlugin, utils} from 'stylelint';
-import {pluginPrefix} from '.';
+import {createPlugin, Plugin, utils} from 'stylelint';
 
 export type Rule = {
     ruleName: string;
@@ -11,6 +10,5 @@ export function createRuleMessage(ruleName: string, message: string): string {
 }
 
 export function createRule(inputRuleName: string, ruleCallback: Plugin): Rule {
-    const ruleName = `${pluginPrefix}/${inputRuleName}`;
-    return createPlugin(ruleName, ruleCallback);
+    return createPlugin(inputRuleName, ruleCallback);
 }

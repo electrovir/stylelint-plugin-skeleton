@@ -1,11 +1,8 @@
-import {testRule} from '../test-rule';
-import {visibilityRule} from './visibility.rule';
-
-console.log('visibilityRule', visibilityRule);
+import {testRule} from '../../test-rule';
+import {orderRule} from './visibility.rule';
 
 testRule({
-    ruleName: visibilityRule.ruleName,
-    plugins: ['./index.js'],
+    ruleName: orderRule.ruleName,
     config: [true],
     fix: true,
     accept: [
@@ -17,7 +14,7 @@ testRule({
         {
             code: 'a { color: pink; visibility: hidden; }',
             fixed: 'a { color: pink; }',
-            message: 'what',
+            message: 'Try not to use visibility (skeleton/visibility)',
         },
     ],
 });
