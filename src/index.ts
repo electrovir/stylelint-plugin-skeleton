@@ -1,3 +1,3 @@
-import {orderRule} from './rules/visibility/visibility.rule';
+import {visibilityRule} from './rules/visibility/visibility.rule';
 
-export default [orderRule];
+export default [visibilityRule];

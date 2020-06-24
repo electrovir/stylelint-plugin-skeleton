@@ -1,11 +1,16 @@
 import {Plugin, utils} from 'stylelint';
 import {createRule, createRuleMessage} from '../../rule';
 
+/*
+Example rule influenced by
+https://www.codementor.io/@rudolfolah/stylelint-rules-how-to-write-your-own-rules-hhmwikafq
+*/
+
 const ruleName = 'skeleton/visibility';
 
 const rule: Plugin = (
     primaryOption,
-    options,
+    extraOptions,
     context = {
         fix: false,
     },
@@ -33,4 +38,4 @@ const rule: Plugin = (
     };
 };
 
-export const orderRule = createRule(ruleName, rule);
+export const visibilityRule = createRule(ruleName, rule);

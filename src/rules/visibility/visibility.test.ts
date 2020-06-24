@@ -1,9 +1,9 @@
 import {testRule} from '../../test-rule';
-import {orderRule} from './visibility.rule';
+import {visibilityRule} from './visibility.rule';
 
 testRule({
-    ruleName: orderRule.ruleName,
-    config: [true],
+    ruleName: visibilityRule.ruleName,
+    ruleOptions: [true],
     fix: true,
     accept: [
         {
