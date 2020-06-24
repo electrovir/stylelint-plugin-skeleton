@@ -26,6 +26,7 @@
         "jest": "^26.0.1",
         "prettier": "~2.0.5",
         "stylelint": "^13.6.1",
+        "stylelint-jest-rule-tester": "^1.0.1",
         "typescript": "^3.9.5"
     }
 }
