@@ -8,6 +8,10 @@ https://www.codementor.io/@rudolfolah/stylelint-rules-how-to-write-your-own-rule
 
 const ruleName = 'skeleton/visibility';
 
+const messages = utils.ruleMessages(ruleName, {
+    noUseVisibility: () => `Try not to use visibility.`,
+});
+
 const rule: Plugin = (
     primaryOption,
     extraOptions,
@@ -28,7 +32,7 @@ const rule: Plugin = (
                     utils.report({
                         result,
                         ruleName,
-                        message: createRuleMessage(ruleName, 'Try not to use visibility'),
+                        message: messages.noUseVisibility(),
                         node: decl,
                         word: decl.value,
                     });
@@ -38,4 +42,4 @@ const rule: Plugin = (
     };
 };
 
-export const visibilityRule = createRule(ruleName, rule);
+export const visibilityRule = createRule(ruleName, rule, messages);
