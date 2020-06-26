@@ -1,25 +1,16 @@
-import {Plugin, utils} from 'stylelint';
-import {createRule, createRuleMessage} from '../../rule';
+import {createRule} from 'stylelint-rule-creator';
 
 /*
 Example rule influenced by
 https://www.codementor.io/@rudolfolah/stylelint-rules-how-to-write-your-own-rules-hhmwikafq
 */
 
-const ruleName = 'skeleton/visibility';
-
-const messages = utils.ruleMessages(ruleName, {
-    noUseVisibility: () => `Try not to use visibility.`,
-});
-
-const rule: Plugin = (
-    primaryOption,
-    extraOptions,
-    context = {
-        fix: false,
+export const visibilityRule = createRule(
+    'skeleton/visibility',
+    {
+        noUseVisibility: () => `Try not to use visibility.`,
     },
-) => {
-    return (root, result) => {
+    (reportCallback, messageCallbacks, {primaryOption, context, root}) => {
         if (!primaryOption) {
             return;
         }
@@ -29,17 +20,13 @@ const rule: Plugin = (
                 if (context.fix) {
                     decl.remove();
                 } else {
-                    utils.report({
-                        result,
-                        ruleName,
-                        message: messages.noUseVisibility(),
+                    reportCallback({
+                        message: messageCallbacks.noUseVisibility(),
                         node: decl,
                         word: decl.value,
                     });
                 }
             }
         });
-    };
-};
-
-export const visibilityRule = createRule(ruleName, rule, messages);
+    },
+);
