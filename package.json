@@ -1,34 +1,39 @@
 {
     "name": "stylelint-plugin-skeleton",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "private": true,
     "description": "Skeleton for making a stylelint plugin.",
-    "main": "dist/index.js",
-    "scripts": {
-        "test": "rm -rf dist; tsc && jest"
+    "homepage": "https://github.com/electrovir/stylelint-plugin-skeleton#readme",
+    "bugs": {
+        "url": "https://github.com/electrovir/stylelint-plugin-skeleton/issues"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/electrovir/stylelint-plugin-skeleton.git"
     },
-    "keywords": [],
-    "author": "electrovir (github.com/electrovir)",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/electrovir/stylelint-plugin-skeleton/issues"
+    "author": {
+        "name": "electrovir",
+        "url": "https://github.com/electrovir"
     },
-    "homepage": "https://github.com/electrovir/stylelint-plugin-skeleton#readme",
-    "peerDependencies": {
-        "stylelint": "^13.0.0"
-    },
-    "devDependencies": {
-        "@types/jest": "^26.0.0",
-        "@types/stylelint": "^9.10.1",
-        "jest": "^26.0.1",
-        "prettier": "~2.0.5",
-        "stylelint": "^13.6.1",
-        "typescript": "^3.9.5"
+    "scripts": {
+        "prepublishOnly": "npm run test:full",
+        "spellcheck": "virmator spellcheck",
+        "test": "virmator compile && jest",
+        "test:full": "npm test && npm run spellcheck check && virmator format check",
+        "format": "virmator format write"
     },
     "dependencies": {
-        "stylelint-rule-creator": "^1.0.1"
+        "stylelint-rule-creator": "^4.1.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.1",
+        "@types/stylelint": "^13.13.2",
+        "jest": "^27.1.1",
+        "stylelint": "^13.13.1",
+        "virmator": "^1.1.12"
+    },
+    "peerDependencies": {
+        "stylelint": "^13.13.1"
     }
 }

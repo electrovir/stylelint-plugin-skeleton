@@ -5,17 +5,17 @@ Example rule influenced by
 https://www.codementor.io/@rudolfolah/stylelint-rules-how-to-write-your-own-rules-hhmwikafq
 */
 
-export const visibilityRule = createRule(
-    'skeleton/visibility',
-    {
+export const visibilityRule = createRule({
+    ruleName: 'skeleton/visibility',
+    messages: {
         noUseVisibility: () => `Try not to use visibility.`,
     },
-    (reportCallback, messageCallbacks, {primaryOption, context, root}) => {
+    ruleCallback: (reportCallback, messageCallbacks, {primaryOption, context, root}) => {
         if (!primaryOption) {
             return;
         }
 
-        root.walkDecls(decl => {
+        root.walkDecls((decl) => {
             if (decl.prop === 'visibility') {
                 if (context.fix) {
                     decl.remove();
@@ -29,4 +29,4 @@ export const visibilityRule = createRule(
             }
         });
     },
-);
+});
