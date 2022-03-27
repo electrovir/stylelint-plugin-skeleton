@@ -1,6 +1,5 @@
 {
     "name": "stylelint-plugin-skeleton",
-    "version": "1.0.1",
     "private": true,
     "description": "Skeleton for making a stylelint plugin.",
     "homepage": "https://github.com/electrovir/stylelint-plugin-skeleton#readme",
@@ -17,23 +16,22 @@
         "url": "https://github.com/electrovir"
     },
     "scripts": {
+        "format": "virmator format write",
         "prepublishOnly": "npm run test:full",
         "spellcheck": "virmator spellcheck",
-        "test": "virmator compile && jest",
-        "test:full": "npm test && npm run spellcheck check && virmator format check",
-        "format": "virmator format write"
+        "test": "virmator compile && virmator test",
+        "test:full": "npm test && npm run spellcheck check && virmator format check"
     },
     "dependencies": {
-        "stylelint-rule-creator": "^4.1.1"
+        "stylelint-rule-creator": "5.1.0"
     },
     "devDependencies": {
-        "@types/jest": "^27.0.1",
-        "@types/stylelint": "^13.13.2",
-        "jest": "^27.1.1",
-        "stylelint": "^13.13.1",
-        "virmator": "^1.1.12"
+        "@types/stylelint": "13.13.2",
+        "stylelint": "14.6.1",
+        "stylelint-jest-rule-tester": "2.1.7",
+        "virmator": "2.0.3"
     },
     "peerDependencies": {
-        "stylelint": "^13.13.1"
+        "stylelint": "14.6.1"
     }
 }

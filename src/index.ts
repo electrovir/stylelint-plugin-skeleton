@@ -1,4 +1,4 @@
-import {testRule as baseTestRule, TestRuleInput} from 'stylelint-rule-creator';
+import {testRule as baseTestRule, TestRuleInput} from 'stylelint-jest-rule-tester';
 import {visibilityRule} from './rules/visibility/visibility.rule';
 
 export function testRule<RuleOptionsType>(testRuleInput: TestRuleInput<RuleOptionsType>) {
